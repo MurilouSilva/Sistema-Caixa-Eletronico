@@ -1,10 +1,8 @@
-
-
 #include <stdio.h>
 
 int main(){
 
-    //saldo começa com 1000
+    //Saldo inicial = 1000
 
     int saldo = 1000; 
 
@@ -17,7 +15,7 @@ int main(){
     int valor = 0; 
     scanf("%d", &valor);
 
-    //invalida caso o valor seja menor ou igual a 0
+    //Inválido caso o valor seja menor ou igual a 0
 
     if (valor <= 0)
     {
@@ -25,17 +23,17 @@ int main(){
         printf("Valor invalido, digite um valor maior que zero\n");
         printf("---------------------------------\n");
     }
-    else if (valor > saldo) //se o valor digitado tambem for maior que o saldo, tambem é invalidade
+    else if (valor > saldo) //Verifica se o valor solicitado ultrapassa o saldo disponível
     {
         printf("\n---------------------------------\n");
-        printf("Saldo insuficiente, seu saldo eh de R$ %d\n", saldo);
+        printf("Saldo insuficiente, seu saldo e de R$ %d\n", saldo);
         printf("---------------------------------\n");
     }
     else
     {
         int resto = valor; 
         
-        //variaveis das notas e moeda com o resto
+        //Calcula a quantidade de notas utilizando divisão inteira
 
         int notas_100 = resto / 100;
         resto = resto % 100;
@@ -57,12 +55,12 @@ int main(){
 
         int moedas_1 = resto; 
 
-        //print da autorização autorizada
+        //Mensagem de autorização
 
         printf("\nSaque de R$ %d autorizado!\n", valor);
         printf("---------------------------------\n");
 
-        //condicionais de qt de notas e moeda de saque
+        //Exibe apenas as notas e moedas cuja quantidade seja maior que zero
 
         if (notas_100 > 0)
         {
@@ -93,7 +91,7 @@ int main(){
             printf("Moedas de R$ 1: %d\n", moedas_1);
         }
 
-        //print final
+        //Exibe o saldo restante após descontar o valor do saque
         printf("---------------------------------\n");
         printf("Saldo restante: R$ %d\n", saldo - valor);
     }
